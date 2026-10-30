@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Report</title>
+</head>
+<body>
+    <h1>Add New Report</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="item_name" placeholder="Item Name" required><br>
+        <input type="text" name="item_description" placeholder="Item Description" required><br>
+        <input type="text" name="item_location" placeholder="Item Location" required><br>
+        <label for="report_type">Report Type:</label>
+        <select name="report_type" id="report_type" required>   
+            <option value="lost">Lost</option>
+            <option value="found">Found</option>    
+        </select>
+        <button type="submit">Submit Report</button>
+    </form>
+</body>
+</html>

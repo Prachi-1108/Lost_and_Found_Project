@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Lost and Found Reporting System</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'add_report' %}">Add Report</a></li>
+                <li><a href="{% url 'edit_report' report_id=1 %}">Edit Report</a></li>
+                <li><a href="{% url 'login_page' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

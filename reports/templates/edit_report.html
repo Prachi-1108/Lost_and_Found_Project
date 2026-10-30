@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Report</title>
+</head>
+<body>
+    <h1>Update Report</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="item_name" value="{{ report.item_name }}" required><br>
+        <input type="text" name="item_description" value="{{ report.description }}" required><br>
+        <input type="text" name="item_location" value="{{ report.location }}" required><br>
+        <label for="report_type">Report Type:</label>
+        <select name="report_type" id="report_type" required>   
+            <option value="lost" {% if report.report_type %}selected{% endif %}>Lost</option>
+            <option value="found" {% if not report.report_type %}selected{% endif %}>Found</option>    
+        </select>
+        <button type="submit">Update Report</button>
+    </form>
+</body>
+</html>
